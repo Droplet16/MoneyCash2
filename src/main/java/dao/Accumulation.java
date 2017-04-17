@@ -1,6 +1,6 @@
 package dao;
 
-import java.beans.Transient;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -13,7 +13,9 @@ public class Accumulation {
     private Target target;
     private Long targetId;
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID", nullable = false, unique = true)
     public Long getId() {
         return id;
     }
@@ -22,6 +24,7 @@ public class Accumulation {
         this.id = id;
     }
 
+    @Column(name = "AMOUNT", nullable = false, unique = true)
     public Long getAmount() {
         return amount;
     }
@@ -30,6 +33,7 @@ public class Accumulation {
         this.amount = amount;
     }
 
+    @Column(name = "AC_DATE", nullable = false, unique = true)
     public Date getAcDate() {
         return acDate;
     }
@@ -38,6 +42,8 @@ public class Accumulation {
         this.acDate = acDate;
     }
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "TARGET_ID", nullable = false)
     public Target getTarget() {
         return target;
     }
@@ -46,6 +52,7 @@ public class Accumulation {
         this.target = target;
     }
 
+    @Transient
     public Long getTargetId() {
         return targetId;
     }

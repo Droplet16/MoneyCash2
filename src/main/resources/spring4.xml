@@ -31,8 +31,8 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-                <value>dao.User</value>
-                <value>dao.Post</value>
+                <value>dao.Target</value>
+                <value>dao.Accumulation</value>
             </list>
         </property>
         <property name="hibernateProperties">

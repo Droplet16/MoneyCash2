@@ -1,5 +1,6 @@
 package dao;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
 
@@ -13,6 +14,9 @@ public class Target {
     private Date targetDate;
     private Set<Accumulation> accumulations = null;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID", nullable = false, unique = true)
     public Long getId() {
         return id;
     }
@@ -21,6 +25,7 @@ public class Target {
         this.id = id;
     }
 
+    @Column(name = "TARGET", nullable = false, unique = true)
     public String getTarget() {
         return target;
     }
@@ -29,6 +34,7 @@ public class Target {
         this.target = target;
     }
 
+    @Column(name = "TARGET_AMOUNT", nullable = false, unique = true)
     public Long getTargetAmount() {
         return targetAmount;
     }
@@ -37,6 +43,7 @@ public class Target {
         this.targetAmount = targetAmount;
     }
 
+    @Column(name = "TARGET_DATE", nullable = false, unique = true)
     public Date getTargetDate() {
         return targetDate;
     }
@@ -45,6 +52,7 @@ public class Target {
         this.targetDate = targetDate;
     }
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "target")
     public Set<Accumulation> getAccumulations() {
         return accumulations;
     }
