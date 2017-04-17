@@ -1,17 +1,73 @@
-//package dao;
-//
-//import java.beans.Transient;
-//import java.util.Date;
-//
-///**
-// * Created by user on 16.04.2017.
-// */
-//public class Accumulation {
-//    private Long id;
-//    private Double amount;
-//    private Date dateAc;
-//    private Target target;
-//    private Long targetId;
+package dao;
+
+import java.beans.Transient;
+import java.util.Date;
+
+/**
+ * Created by user on 16.04.2017.
+ */
+public class Accumulation {
+    private Long id;
+    private Long amount;
+    private Date acDate;
+    private Target target;
+    private Long targetId;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Long amount) {
+        this.amount = amount;
+    }
+
+    public Date getAcDate() {
+        return acDate;
+    }
+
+    public void setAcDate(Date acDate) {
+        this.acDate = acDate;
+    }
+
+    public Target getTarget() {
+        return target;
+    }
+
+    public void setTarget(Target target) {
+        this.target = target;
+    }
+
+    public Long getTargetId() {
+        return targetId;
+    }
+
+    public void setTargetId(Long targetId) {
+        this.targetId = targetId;
+    }
+
+    @Override
+    public String toString() {
+        return "Accumulation{" +
+                "id=" + id +
+                ", amount=" + amount +
+                ", acDate=" + acDate +
+                ", target=" + target +
+                ", targetId=" + targetId +
+                '}';
+    }
+
+    //    public void setDateAc(Date dateAc) {
+//        this.dateAc = dateAc;
+//    }
 //
 //    public Accumulation() {
 //
@@ -80,4 +136,4 @@
 //                .append("dateAc", dateAc)
 //                .toString();
 //    }
-//}
+}
