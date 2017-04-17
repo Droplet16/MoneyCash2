@@ -26,16 +26,16 @@ public class DBTableCreator { public static void main(String[] args) {
                 + " ( "
                 + " ID                      SERIAL PRIMARY KEY     NOT NULL, "
                 + " TARGET                  VARCHAR(32)            NOT NULL, "
-                + " AMOUNT_TARGET           DOUBLE                 NOT NULL, "
-                + " DATE_TARGET             DATE                   NOT NULL  "
+                + " TARGET_AMOUNT           INT                    NOT NULL, "
+                + " TARGET_DATE             DATE                   NOT NULL  "
                 + " ) ";
         stmt.executeUpdate(sql);
 
         sql = "CREATE TABLE IF NOT EXISTS JAVA_MONEY.ACCUMULATION "
                 + " ( "
                 + " ID                      SERIAL PRIMARY KEY     NOT NULL, "
-                + " AMOUNT                  DOUBLE                 NOT NULL, "
-                + " DATE_AC                 DATE                   NOT NULL, "
+                + " AMOUNT                  INT                    NOT NULL, "
+                + " AC_DATE                 DATE                   NOT NULL, "
                 + " TARGET_ID               INT                    NOT NULL  "
                 + " ) ";
         stmt.executeUpdate(sql);
