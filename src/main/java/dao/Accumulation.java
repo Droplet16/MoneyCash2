@@ -7,6 +7,8 @@ import javax.persistence.*;
 /**
  * Created by user on 16.04.2017.
  */
+@Entity
+@Table(name = "ACCUMULATION", schema = "JAVA_MONEY")
 public class Accumulation {
     private Long id;
     private Long amount;

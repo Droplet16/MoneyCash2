@@ -9,6 +9,8 @@ import java.util.Set;
 /**
  * Created by user on 16.04.2017.
  */
+@Entity
+@Table(name = "TARGET", schema = "JAVA_MONEY")
 public class Target {
     private Long id;
     private String target;
