@@ -1,7 +1,8 @@
 package dao;
 
+import org.hibernate.annotations.Type;
+import org.joda.time.LocalDate;
 import javax.persistence.*;
-import java.util.Date;
 
 /**
  * Created by user on 16.04.2017.
@@ -9,9 +10,12 @@ import java.util.Date;
 public class Accumulation {
     private Long id;
     private Long amount;
-    private Date acDate;
+    private LocalDate acDate;
     private Target target;
     private Long targetId;
+
+    public Accumulation() {
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,11 +38,12 @@ public class Accumulation {
     }
 
     @Column(name = "AC_DATE", nullable = false, unique = true)
-    public Date getAcDate() {
+    @Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
+    public LocalDate getAcDate() {
         return acDate;
     }
 
-    public void setAcDate(Date acDate) {
+    public void setAcDate(LocalDate acDate) {
         this.acDate = acDate;
     }
 

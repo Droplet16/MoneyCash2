@@ -1,7 +1,9 @@
 package dao;
 
+import org.hibernate.annotations.Type;
+import org.joda.time.LocalDate;
+
 import javax.persistence.*;
-import java.util.Date;
 import java.util.Set;
 
 /**
@@ -11,8 +13,11 @@ public class Target {
     private Long id;
     private String target;
     private Long targetAmount;
-    private Date targetDate;
+    private LocalDate targetDate;
     private Set<Accumulation> accumulations = null;
+
+    public Target() {
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,11 +49,12 @@ public class Target {
     }
 
     @Column(name = "TARGET_DATE", nullable = false, unique = true)
-    public Date getTargetDate() {
+    @Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
+    public LocalDate getTargetDate() {
         return targetDate;
     }
 
-    public void setTargetDate(Date targetDate) {
+    public void setTargetDate(LocalDate targetDate) {
         this.targetDate = targetDate;
     }
 
