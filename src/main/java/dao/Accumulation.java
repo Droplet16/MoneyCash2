@@ -74,7 +74,6 @@ public class Accumulation {
                 "id=" + id +
                 ", amount=" + amount +
                 ", acDate=" + acDate +
-                ", target=" + target +
                 ", targetId=" + targetId +
                 '}';
     }

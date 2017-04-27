@@ -23,10 +23,18 @@ public class AccumulationDaoImpl implements AccumulationDao {
         private DataSource dataSource;
 
         public void save(Accumulation entity) {
-            Session session = this.sessionFactory.openSession();
-            Transaction tx = session.beginTransaction();
-            session.persist(entity);
-            tx.commit();
-            session.close();
+        Session session = this.sessionFactory.openSession();
+        Transaction tx = session.beginTransaction();
+        session.persist(entity);
+        tx.commit();
+        session.close();
         }
+
+        public void update (Accumulation entity) {
+        Session session = this.sessionFactory.openSession();
+        Transaction tx = session.beginTransaction();
+        session.update(entity);
+        tx.commit();
+        session.close();
+    }
     }

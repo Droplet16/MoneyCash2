@@ -6,6 +6,9 @@ import dao.Accumulation;
 import dao.Target;
 import org.joda.time.LocalDate;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import service.TargetService;
+
+import java.util.List;
 
 /**
  * Created by user on 18.04.2017.
@@ -17,7 +20,17 @@ public class SpringHibernateMain {
         TargetDao targetDao = context.getBean(TargetDao.class);
         AccumulationDao accumulationDao = context.getBean(AccumulationDao.class);
 
-        putNewRecordsToDataBase(targetDao, accumulationDao);
+        TargetService targetService = context.getBean(TargetService.class);
+
+
+//        putNewRecordsToDataBase(targetDao, accumulationDao);
+
+
+        List<Target> allTargets = targetService.findAll();
+
+        for (Target u : allTargets) {
+            System.out.println("target = " + u);
+        }
         context.close();
     }
 

@@ -7,4 +7,6 @@ import dao.Accumulation;
  */
 public interface AccumulationDao {
     void save(Accumulation entity);
+
+    void update(Accumulation entity);
 }

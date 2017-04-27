@@ -41,7 +41,7 @@ public class DBTableCreator { public static void main(String[] args) {
         stmt.executeUpdate(sql);
 
         sql = "ALTER TABLE JAVA_MONEY.ACCUMULATION "
-                + " ADD CONSTRAINT FK_ACCUMULATION "
+                + " ADD CONSTRAINT FK_TARGET "
                 + " FOREIGN KEY (TARGET_ID) REFERENCES JAVA_MONEY.TARGET (ID) MATCH FULL "
                 + " ";
         stmt.executeUpdate(sql);

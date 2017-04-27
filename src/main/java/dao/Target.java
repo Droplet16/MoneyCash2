@@ -76,7 +76,6 @@ public class Target {
                 ", target='" + target + '\'' +
                 ", targetAmount=" + targetAmount +
                 ", targetDate=" + targetDate +
-                ", accumulations=" + accumulations +
                 '}';
     }
 }
